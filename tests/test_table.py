@@ -14,10 +14,10 @@ def test_cast_column() -> None:
 
 @pytest.mark.parametrize(
     argnames=("column_index", "expected"),
-    argvalues=(
+    argvalues=[
         pytest.param(0, ["foo", "bar", "baz"], id="column 0"),
         pytest.param(1, [1, 2, 3], id="column 1"),
-    ),
+    ],
 )
 def test_get_column(column_index: int, expected: list[Any]) -> None:
     table = Table([["foo", 1], ["bar", 2], ["baz", 3]])
