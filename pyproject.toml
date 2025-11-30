@@ -61,4 +61,3 @@ allow-insecure-host = [
     "pypi.python.org",
     "files.pythonhosted.org"
 ]
-default-groups = []     # Only install project dependencies by default
