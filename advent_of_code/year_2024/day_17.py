@@ -100,7 +100,7 @@ class Computer:
             f"\nA: {self.a:>10,}"
             f"\nB: {self.b:>10,}"
             f"\nC: {self.c:>10,}"
-            f"\n{self.program[self.i: self.i + 2]}"
+            f"\n{self.program[self.i : self.i + 2]}"
             f"\n{self.i}"
             f"\n{self.output}"
         )
