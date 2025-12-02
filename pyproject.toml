@@ -43,7 +43,10 @@ select = ["ALL"]
 ignore = [
     "COM812",           # Ignore absence of trailing commas, causes conflicts with formatter
     "D",                # Ignore docstring rules
+    "INP001",           # Ignore missing `__init__.py`
     "ISC001",           # Ignore implicit string concatenation, causes conflicts with formatter
+    "PLR2004",          # Ignore magic values
+    "S101",             # Ignore asserts
     "S311",             # Ignore pseudo-random generators
     "T20"               # Ignore print rules
 ]
@@ -52,8 +55,6 @@ fixable = ["ALL"]
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = [
     "FBT001",           # Ignore boolean positional arguments in tests
-    "PLR2004",          # Ignore magic values in comparisons in tests
-    "S101"              # Ignore asserts in tests
 ]   
 
 [tool.uv]
