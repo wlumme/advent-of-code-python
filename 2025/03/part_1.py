@@ -1,11 +1,7 @@
 from pathlib import Path
 
-input_text = Path("2025/03/input.txt").read_text()
 
-banks = input_text.split("\n")
-
-total_max_joltage = 0
-for bank in banks:
+def get_max_joltage(bank: str) -> int:
     max_leading_digit = int(bank[0])
     leading_digit_index = 0
     for i, battery in enumerate(bank[:-1]):
@@ -16,6 +12,14 @@ for bank in banks:
 
     max_trailing_digit = int(max(bank[leading_digit_index + 1 :]))
 
-    total_max_joltage += 10 * max_leading_digit + max_trailing_digit
+    return 10 * max_leading_digit + max_trailing_digit
 
-print(total_max_joltage)
+
+if __name__ == "__main__":
+    input_text = Path("2025/03/input.txt").read_text()
+    banks = input_text.split("\n")
+    total_max_joltage = 0
+    for bank in banks:
+        total_max_joltage += get_max_joltage(bank)
+
+    print(total_max_joltage)
