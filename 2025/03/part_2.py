@@ -8,10 +8,9 @@ def get_max_joltage(bank: str, num_digits: int) -> int:
     for remaining_digits in range(num_digits, 0, -1):
         max_joltage = int(bank[digit_index])
         max_joltage_index = digit_index
-        start_index = digit_index + 1
         end_index = len(bank) - remaining_digits + 1
 
-        for i, battery in indexed_bank[start_index:end_index]:
+        for i, battery in indexed_bank[digit_index + 1 : end_index]:
             joltage = int(battery)
             if joltage > max_joltage:
                 max_joltage = joltage
