@@ -1,5 +1,5 @@
 from pathlib import Path
-
+from solution import Solution
 
 def parse_line(line: str) -> int:
     direction_key = {"L": -1, "R": 1}
